@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>206551017646-qqraa9cbqbqcethdus700mtce505u2jc.apps.googleusercontent.com</string>
+	<string>776569084537-q8k1vmknd8eq8nkdnjtuomu4o8nfn5sm.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.206551017646-qqraa9cbqbqcethdus700mtce505u2jc</string>
+	<string>com.googleusercontent.apps.776569084537-q8k1vmknd8eq8nkdnjtuomu4o8nfn5sm</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDkrQn9FWPcuaSDTBajZv8oACdalDex1AY</string>
+	<string>AIzaSyALf2XqkARv4gM82YqI4diiIOvJCroQ940</string>
 	<key>GCM_SENDER_ID</key>
-	<string>206551017646</string>
+	<string>776569084537</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.kenyehproject.firebase</string>
+	<string>com.kenyehproject.Alien</string>
 	<key>PROJECT_ID</key>
-	<string>grocr-c95ef</string>
+	<string>alien-abec6</string>
 	<key>STORAGE_BUCKET</key>
-	<string>grocr-c95ef.appspot.com</string>
+	<string>alien-abec6.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,8 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:206551017646:ios:d992edd98cbb8338</string>
+	<string>1:776569084537:ios:0bc92f15ed3dc58c</string>
 	<key>DATABASE_URL</key>
-	<string>https://grocr-c95ef.firebaseio.com</string>
+	<string>https://alien-abec6.firebaseio.com</string>
 </dict>
 </plist>
