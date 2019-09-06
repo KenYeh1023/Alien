@@ -9,16 +9,16 @@
 import UIKit
 
 class NotificationTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var userNameText: UIButton!
+    
+    @IBOutlet weak var gameNameText: UIButton!
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    @IBOutlet weak var notificationText: UILabel!
+    
+    @IBOutlet weak var agreeButtonOutlet: UIButton!
+    
+    
+    @IBOutlet weak var rejectButtonOutlet: UIButton!
+    
 }

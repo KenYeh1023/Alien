@@ -10,15 +10,11 @@ import UIKit
 
 class GroupListTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
+    @IBOutlet weak var groupListTitle: UILabel!
+    
+    @IBOutlet weak var groupListActivityTime: UILabel!
+    
+    @IBOutlet weak var groupGameTitle: UILabel!
+    
+    
 }
