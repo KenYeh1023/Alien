@@ -21,4 +21,7 @@ class NotificationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var rejectButtonOutlet: UIButton!
     
+    
+    @IBOutlet weak var userProfilePicture: UIImageView!
+    
 }

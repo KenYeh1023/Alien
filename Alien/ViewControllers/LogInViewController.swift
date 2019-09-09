@@ -105,7 +105,7 @@ class LogInViewController: UIViewController {
         if textFieldCreateNickname.text != "" {
             if let nickName: String = textFieldCreateNickname.text {
                 //將使用者存進firebase
-                let nameValue:[String:Any] = ["name":nickName]
+                let nameValue:[String:Any] = ["name":nickName, "image": "defaultProfilePicture"]
                 usersRef.setValue(nameValue)
                 print("firebase updates")
                 //畫面跳轉至首頁

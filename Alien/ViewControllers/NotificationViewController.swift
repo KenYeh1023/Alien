@@ -73,9 +73,10 @@ struct Notification {
 class NotificationViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var notificationArray: [Notification] = []
-    var notificationArraySection2: [Notification] = [Notification(notificationGroupOwner: "ZZZZZ", notificationGameName: "CCCCC", notificationGroupAutoID: "DDDDDDD", notificationstatus: "0", notificationRequestBy: "AAAA", notificationID: "JDIU")]
+    var notificationArraySection2: [Notification] = [Notification(notificationGroupOwner: "Ken", notificationGameName: "GGG", notificationGroupAutoID: "wdmwkefwe", notificationstatus: "2", notificationRequestBy: "UUU", notificationID: "sldfkdslf")]
     
     @IBOutlet weak var NotificationTableView: UITableView!
+    
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -92,11 +93,29 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! NotificationTableViewCell
         if indexPath.section == 0 {
-        cell.notificationText.text = notificationArray[indexPath.row].notificationText1
-        cell.userNameText.setTitle(notificationArray[indexPath.row].notificationGroupOwner, for: .normal)
-        cell.gameNameText.setTitle(notificationArray[indexPath.row].notificationGameName, for: .normal)
-        cell.agreeButtonOutlet.isHidden = false
-        cell.rejectButtonOutlet.isHidden = false
+            
+            let ref = Database.database().reference(withPath: "users")
+            let userRef = ref.child(notificationArray[indexPath.row].notificationRequestBy)
+            userRef.observeSingleEvent(of: .value) { (snapshot) in
+                if let valueDict: [String: Any] = snapshot.value as? [String: Any],
+                    let nameValue: String = valueDict["name"] as? String, let imageValue: String = valueDict["image"] as? String {
+                    cell.userNameText.setTitle(nameValue, for: .normal)
+                    cell.gameNameText.setTitle(self.notificationArray[indexPath.row].notificationGameName, for: .normal)
+                    cell.notificationText.text = self.notificationArray[indexPath.row].notificationText1
+                    cell.userProfilePicture.image = UIImage(named: imageValue)
+                    cell.agreeButtonOutlet.isHidden = false
+                    cell.rejectButtonOutlet.isHidden = false
+                }
+            }
+            
+            
+//        cell.notificationText.text = notificationArray[indexPath.row].notificationText1
+//        cell.userNameText.setTitle(notificationArray[indexPath.row].notificationGroupOwner, for: .normal)
+//        cell.gameNameText.setTitle(notificationArray[indexPath.row].notificationGameName, for: .normal)
+//        cell.agreeButtonOutlet.isHidden = false
+//        cell.rejectButtonOutlet.isHidden = false
+            
+            
         } else {
             notificationArraySection2[indexPath.row].notificationText1 = "婉拒了您的加入請求"
             cell.notificationText.text = notificationArraySection2[indexPath.row].notificationText1
@@ -190,6 +209,14 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
         } else {
          print("Wromg TableViewCell Selected")
         }
+    }
+    
+    
+    @IBAction func rejectButtonPressed(_ sender: UIButton) {
+        
+        
+        
+        
     }
 }
 
