@@ -11,6 +11,10 @@ import Firebase
 
 class CreateGroupViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDataSource, UITableViewDelegate {
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
+    
     @IBOutlet weak var gameListTableViewController: UITableView!
     
     @IBOutlet weak var gameSelectorText: UIButton!
@@ -20,6 +24,8 @@ class CreateGroupViewController: UIViewController, UIPickerViewDelegate, UIPicke
     @IBOutlet weak var dateSelectorText: UIButton!
     
     @IBOutlet weak var groupMemberSelectorText: UIButton!
+
+    @IBOutlet weak var createGroupButton: UIButton!
     
     
     var groupMemberArrayForPickerView: [String] = ["", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
@@ -29,7 +35,9 @@ class CreateGroupViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.inputGroupTitle.attributedPlaceholder = NSAttributedString(string: "請輸入揪團名稱", attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray])
+        self.createGroupButton.layer.borderWidth = 2
+        self.createGroupButton.layer.borderColor = UIColor(red: 98.0/255.0, green: 179/255.0, blue: 156/255.0, alpha: 1).cgColor
         self.gameListTableViewController.isHidden = true
         
     }
@@ -56,6 +64,8 @@ class CreateGroupViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //設置語言
         datePicker.locale = Locale(identifier: "zh_TW")
         //datePicker.timeZone = NSTimeZone.local
+        datePicker.minimumDate = Date().self
+        datePicker.maximumDate = Date().addingTimeInterval(60 * 60 * 24 * 90)
         //生成alert
         let dateSelectorAlert = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         dateSelectorAlert.view.addSubview(datePicker)
@@ -69,8 +79,8 @@ class CreateGroupViewController: UIViewController, UIPickerViewDelegate, UIPicke
             
         })
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertAction.Style.default, handler: nil)
-        dateSelectorAlert.addAction(selectAction)
         dateSelectorAlert.addAction(cancelAction)
+        dateSelectorAlert.addAction(selectAction)
         present(dateSelectorAlert, animated: true, completion: nil)
         
     }
@@ -84,10 +94,10 @@ class CreateGroupViewController: UIViewController, UIPickerViewDelegate, UIPicke
         groupMemberAlert.view.addSubview(groupMemberPickerView)
         groupMemberPickerView.delegate = self
         groupMemberPickerView.dataSource = self
-        groupMemberAlert.addAction(UIAlertAction(title: "確認", style: .default, handler: { (UIAlertAction) in
-            self.groupMemberSelectorText.setTitle("\(self.groupMemberString) 位", for: .normal)
-        }))
         groupMemberAlert.addAction(UIAlertAction(title: "取消", style: .default, handler: nil))
+        groupMemberAlert.addAction(UIAlertAction(title: "確認", style: .default, handler: { (UIAlertAction) in
+            self.groupMemberSelectorText.setTitle("\(self.groupMemberString)", for: .normal)
+        }))
         self.present(groupMemberAlert ,animated: true, completion: nil)
     }
     
@@ -97,7 +107,7 @@ class CreateGroupViewController: UIViewController, UIPickerViewDelegate, UIPicke
         let groupAutoIDRef = Database.database().reference(withPath: "groups").childByAutoId()
         if self.inputGroupTitle.text != "" {
             if self.dateSelectorText.currentTitle != "選擇時間" {
-                if self.groupMemberSelectorText.currentTitle != "選擇人數" {
+                if self.groupMemberSelectorText.currentTitle != "選擇人數" && self.groupMemberSelectorText.currentTitle != "" {
                     if self.gameSelectorText.currentTitle != "選擇遊戲" {
                         let groupValueDict: [String:Any] = ["groupTitle": self.inputGroupTitle.text!,"gameTitle": self.gameSelectorText.currentTitle!, "groupOwner": userID, "groupActivityTime": self.dateSelectorText.currentTitle!, "maxNumberOfMemberInGroup": self.groupMemberSelectorText.currentTitle!]
                             groupAutoIDRef.setValue(groupValueDict)

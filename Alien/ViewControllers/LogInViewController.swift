@@ -11,15 +11,16 @@ import Firebase
 
 class LogInViewController: UIViewController {
     
-    @IBOutlet weak var textFieldLogInEmail: UITextField!
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
+    @IBOutlet weak var textFieldLogInEmail: UITextField!
     @IBOutlet weak var textFieldLogInPassword: UITextField!
     
-    @IBOutlet weak var textFieldRegisterEmail: UITextField!
+    @IBOutlet weak var logInButton: UIButton!
+    @IBOutlet weak var registerButton: UIButton!
     
-    @IBOutlet weak var textFieldRegisterPassword: UITextField!
-    
-    @IBOutlet weak var textFieldCreateNickname: UITextField!
     
     @IBAction func logInButtonPressed(_ sender: UIButton) {
         
@@ -71,65 +72,6 @@ class LogInViewController: UIViewController {
         }
     }
     
-    @IBAction func signUpButtonPressed(_ sender: UIButton) {
-        
-        if let email: String = textFieldRegisterEmail.text, let password: String = textFieldRegisterPassword.text {
-            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-                if let error = error {
-                   print(error.localizedDescription)
-                   print("Sign up Failed")
-                    
-                   let alert = UIAlertController(title: "註冊發生錯誤", message: error.localizedDescription, preferredStyle: UIAlertController.Style.alert)
-                   let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-                       alert.addAction(alertAction)
-                   self.present(alert, animated: true, completion: nil)
-                    
-                   return
-                }
-                print("Sign up Successfully")
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                
-                let logInViewController = self.storyboard?.instantiateViewController(withIdentifier: "LogInView")
-                appDelegate.window?.rootViewController = logInViewController
-                appDelegate.window?.makeKeyAndVisible()
-            }
-        }
-    }
-    
-    @IBAction func createNicknameButtonPressed(_ sender: UIButton) {
-        
-        guard let userID: String = Auth.auth().currentUser?.uid else { return }
-        let ref = Database.database().reference()
-        let usersRef = ref.child("users").child(userID)
-        //檢測使用者是否輸入暱稱
-        if textFieldCreateNickname.text != "" {
-            if let nickName: String = textFieldCreateNickname.text {
-                //將使用者存進firebase
-                let nameValue:[String:Any] = ["name":nickName, "image": "defaultProfilePicture"]
-                usersRef.setValue(nameValue)
-                print("firebase updates")
-                //畫面跳轉至首頁
-                let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                let groupListView = self.storyboard?.instantiateViewController(withIdentifier: "GroupListTabBarView")
-                appDelegate.window?.rootViewController = groupListView
-                appDelegate.window?.makeKeyAndVisible()
-                
-            }
-        } else {
-            let alert = UIAlertController(title: "創建暱稱錯誤", message: "請輸入有效的暱稱", preferredStyle: UIAlertController.Style.alert)
-            let alertAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-            alert.addAction(alertAction)
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    
-    @IBAction func returnButtonPressed(_ sender: UIButton) {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let logInView = self.storyboard?.instantiateViewController(withIdentifier: "LogInView")
-        appDelegate.window?.rootViewController = logInView
-        appDelegate.window?.makeKeyAndVisible()
-    }
     
     
     @IBAction func registerButtonInLogInViewPressed(_ sender: UIButton) {
@@ -142,8 +84,24 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.logInButton.layer.borderColor = UIColor(red: 98.0/255.0, green: 179/255.0, blue: 156/255.0, alpha: 1).cgColor
+        self.logInButton.layer.borderWidth = 2
+        self.registerButton.layer.borderColor = UIColor(red: 98.0/255.0, green: 179/255.0, blue: 156/255.0, alpha: 1).cgColor
+        self.registerButton.layer.borderWidth = 2
         
-        print("Alien")
+        self.textFieldLogInEmail.layer.cornerRadius = 5
+        self.textFieldLogInEmail.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.textFieldLogInEmail.layer.shadowOpacity = 0.7
+        self.textFieldLogInEmail.layer.shadowRadius = 5
+        self.textFieldLogInEmail.layer.shadowColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1).cgColor
+        self.registerButton.layer.cornerRadius = 10
+        self.logInButton.layer.cornerRadius = 10
+        
+        self.textFieldLogInPassword.layer.cornerRadius = 5
+        self.textFieldLogInPassword.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.textFieldLogInPassword.layer.shadowOpacity = 0.7
+        self.textFieldLogInPassword.layer.shadowRadius = 5
+        self.textFieldLogInPassword.layer.shadowColor = UIColor(red: 44.0/255.0, green: 62.0/255.0, blue: 80.0/255.0, alpha: 1).cgColor
         
     }
 }

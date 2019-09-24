@@ -11,5 +11,8 @@ target 'Alien' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
-
+  pod 'Fabric'
+  pod 'Crashlytics'
+  pod 'Firebase/Storage'
+  pod 'MJRefresh'
 end

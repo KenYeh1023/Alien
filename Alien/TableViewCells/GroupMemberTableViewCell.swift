@@ -15,6 +15,8 @@ class GroupMemberTableViewCell: UITableViewCell {
     
     @IBOutlet weak var removeMemberButton: UIButton!
     
+    @IBOutlet weak var crownImage: UIImageView!
     
     
+    @IBOutlet weak var groupMemberImage: UIImageView!
 }

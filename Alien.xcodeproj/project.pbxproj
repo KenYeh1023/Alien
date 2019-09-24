@@ -11,6 +11,9 @@
 		FC3618DF2314CC010031F1AD /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC3618DE2314CC010031F1AD /* CreateGroupViewController.swift */; };
 		FC52C21323138D14001E72C6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FC52C21223138D14001E72C6 /* GoogleService-Info.plist */; };
 		FC5B7B9B232602CA00CFE54E /* OtherUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B7B9A232602CA00CFE54E /* OtherUserViewController.swift */; };
+		FC5B7B9D2327581D00CFE54E /* MyGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B7B9C2327581D00CFE54E /* MyGroupViewController.swift */; };
+		FC5B7BA023279EE100CFE54E /* MyGroupTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5B7B9E23279EE100CFE54E /* MyGroupTableViewCell.swift */; };
+		FC5B7BA123279EE100CFE54E /* MyGroupTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC5B7B9F23279EE100CFE54E /* MyGroupTableViewCell.xib */; };
 		FC5CA8CB231FCC0F007E7763 /* PersonalPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5CA8CA231FCC0F007E7763 /* PersonalPageViewController.swift */; };
 		FC5CA8CD2320E4D6007E7763 /* GroupListTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5CA8CC2320E4D6007E7763 /* GroupListTabBarController.swift */; };
 		FC6EFF1A231675A200E2DAAA /* GroupCreatorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6EFF19231675A200E2DAAA /* GroupCreatorTableViewCell.swift */; };
@@ -19,6 +22,7 @@
 		FC87C5012313E9850099D05E /* GroupListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC87C5002313E9850099D05E /* GroupListTableViewCell.swift */; };
 		FC9150F2231799E400F4A83D /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9150F1231799E400F4A83D /* GroupDetailViewController.swift */; };
 		FCBF189E231E2A3D00B0F26F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF189D231E2A3D00B0F26F /* NotificationViewController.swift */; };
+		FCC8F3CC232F635000128379 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC8F3CB232F635000128379 /* RegisterViewController.swift */; };
 		FCEEA14E231CBA4E00548264 /* GroupMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEA14D231CBA4E00548264 /* GroupMemberViewController.swift */; };
 		FCEEA150231CBE7500548264 /* GroupMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEA14F231CBE7500548264 /* GroupMemberTableViewCell.swift */; };
 		FCF79B4C230FFAA900D3B589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF79B4B230FFAA900D3B589 /* AppDelegate.swift */; };
@@ -35,6 +39,9 @@
 		FC3618DE2314CC010031F1AD /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		FC52C21223138D14001E72C6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FC5B7B9A232602CA00CFE54E /* OtherUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserViewController.swift; sourceTree = "<group>"; };
+		FC5B7B9C2327581D00CFE54E /* MyGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupViewController.swift; sourceTree = "<group>"; };
+		FC5B7B9E23279EE100CFE54E /* MyGroupTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyGroupTableViewCell.swift; sourceTree = "<group>"; };
+		FC5B7B9F23279EE100CFE54E /* MyGroupTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyGroupTableViewCell.xib; sourceTree = "<group>"; };
 		FC5CA8CA231FCC0F007E7763 /* PersonalPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalPageViewController.swift; sourceTree = "<group>"; };
 		FC5CA8CC2320E4D6007E7763 /* GroupListTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListTabBarController.swift; sourceTree = "<group>"; };
 		FC6EFF19231675A200E2DAAA /* GroupCreatorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCreatorTableViewCell.swift; sourceTree = "<group>"; };
@@ -44,6 +51,7 @@
 		FC87C5002313E9850099D05E /* GroupListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListTableViewCell.swift; sourceTree = "<group>"; };
 		FC9150F1231799E400F4A83D /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		FCBF189D231E2A3D00B0F26F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		FCC8F3CB232F635000128379 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../../RegisterViewController.swift; sourceTree = "<group>"; };
 		FCEEA14D231CBA4E00548264 /* GroupMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewController.swift; sourceTree = "<group>"; };
 		FCEEA14F231CBE7500548264 /* GroupMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberTableViewCell.swift; sourceTree = "<group>"; };
 		FCF79B48230FFAA900D3B589 /* Alien.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alien.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,11 +98,12 @@
 			isa = PBXGroup;
 			children = (
 				FCF79B4D230FFAA900D3B589 /* LogInViewController.swift */,
+				FCC8F3CB232F635000128379 /* RegisterViewController.swift */,
 				FC87C4FE2313E6250099D05E /* GroupListViewController.swift */,
 				FC3618DE2314CC010031F1AD /* CreateGroupViewController.swift */,
 				FC9150F1231799E400F4A83D /* GroupDetailViewController.swift */,
-				FCEEA14D231CBA4E00548264 /* GroupMemberViewController.swift */,
 				FC5CA8CA231FCC0F007E7763 /* PersonalPageViewController.swift */,
+				FCEEA14D231CBA4E00548264 /* GroupMemberViewController.swift */,
 				FCBF189D231E2A3D00B0F26F /* NotificationViewController.swift */,
 				FC5CA8CC2320E4D6007E7763 /* GroupListTabBarController.swift */,
 			);
@@ -141,9 +150,12 @@
 				FCF79B5A230FFAAA00D3B589 /* Info.plist */,
 				FCF79B52230FFAA900D3B589 /* Alien.xcdatamodeld */,
 				FC52C21223138D14001E72C6 /* GoogleService-Info.plist */,
+				FC5B7B9C2327581D00CFE54E /* MyGroupViewController.swift */,
 				FC5B7B9A232602CA00CFE54E /* OtherUserViewController.swift */,
 				FC5CA8CF23226B4C007E7763 /* ViewControllers */,
 				FC7675F123226C6C007406A0 /* TableViewCells */,
+				FC5B7B9E23279EE100CFE54E /* MyGroupTableViewCell.swift */,
+				FC5B7B9F23279EE100CFE54E /* MyGroupTableViewCell.xib */,
 			);
 			path = Alien;
 			sourceTree = "<group>";
@@ -160,6 +172,7 @@
 				FCF79B45230FFAA900D3B589 /* Frameworks */,
 				FCF79B46230FFAA900D3B589 /* Resources */,
 				4E8054C28A423FBA0938C841 /* [CP] Embed Pods Frameworks */,
+				FCE284AB2328AC1B001B7E0F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -217,6 +230,7 @@
 				FCF79B56230FFAAA00D3B589 /* Assets.xcassets in Resources */,
 				FC52C21323138D14001E72C6 /* GoogleService-Info.plist in Resources */,
 				FCF79B51230FFAA900D3B589 /* Main.storyboard in Resources */,
+				FC5B7BA123279EE100CFE54E /* MyGroupTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +276,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		FCE284AB2328AC1B001B7E0F /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\"\n";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -277,10 +309,13 @@
 				FC87C4FF2313E6250099D05E /* GroupListViewController.swift in Sources */,
 				FC3618DF2314CC010031F1AD /* CreateGroupViewController.swift in Sources */,
 				FCF79B4E230FFAA900D3B589 /* LogInViewController.swift in Sources */,
+				FC5B7B9D2327581D00CFE54E /* MyGroupViewController.swift in Sources */,
+				FCC8F3CC232F635000128379 /* RegisterViewController.swift in Sources */,
 				FCEEA150231CBE7500548264 /* GroupMemberTableViewCell.swift in Sources */,
 				FCF79B4C230FFAA900D3B589 /* AppDelegate.swift in Sources */,
 				FC5CA8CD2320E4D6007E7763 /* GroupListTabBarController.swift in Sources */,
 				FC6EFF1A231675A200E2DAAA /* GroupCreatorTableViewCell.swift in Sources */,
+				FC5B7BA023279EE100CFE54E /* MyGroupTableViewCell.swift in Sources */,
 				FCF79B54230FFAA900D3B589 /* Alien.xcdatamodeld in Sources */,
 				FCEEA14E231CBA4E00548264 /* GroupMemberViewController.swift in Sources */,
 				FC5CA8CB231FCC0F007E7763 /* PersonalPageViewController.swift in Sources */,
@@ -432,6 +467,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Alien/Alien.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WB8BW3KWAB;
 				INFOPLIST_FILE = Alien/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

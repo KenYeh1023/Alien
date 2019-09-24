@@ -45,7 +45,27 @@ class GroupMemberViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! GroupMemberTableViewCell
         
-        cell.groupMemberListLabel.text = groupMemberArray[indexPath.row].groupMember
+        let ref = Database.database().reference(withPath: "users")
+        let userRef = ref.child(groupMemberArray[indexPath.row].groupMember)
+        userRef.observeSingleEvent(of: .value) { (snapshot) in
+            if let ValueDict: [String: Any] = snapshot.value as?[String: Any] {
+                if let nameValue: String = ValueDict["name"] as? String,
+                    let imageValue: String = ValueDict["image"] as? String {
+                    cell.groupMemberListLabel.text = nameValue
+                    let url = URL(string: imageValue)
+                    let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
+                        if error != nil {
+                            print("error")
+                            return
+                        }
+                        DispatchQueue.main.async {
+                            cell.groupMemberImage.image = UIImage(data: data!)
+                        }
+                    })
+                    task.resume()
+                }
+            }
+        }
         
         if let currentUserID: String = Auth.auth().currentUser?.uid {
             if currentUserID == groupMemberArray[0].groupMember {
@@ -61,15 +81,29 @@ class GroupMemberViewController: UIViewController, UITableViewDelegate, UITableV
          print("Invalid User ID")
         }
         if indexPath.row == 0 {
+            cell.crownImage.isHidden = false
             cell.removeMemberButton.isHidden = true
             cell.groupMemberListLabel.textColor = .blue
+        } else {
+         cell.crownImage.isHidden = true
         }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let currentUser = Auth.auth().currentUser?.uid else { return }
+        if currentUser != groupMemberArray[indexPath.row].groupMember {
+        if let viewController = self.storyboard?.instantiateViewController(withIdentifier: "OtherUserPage") as? OtherUserViewController {
+            viewController.userID = groupMemberArray[indexPath.row].groupMember
+            present(viewController, animated: true, completion: nil)
+            }
+        } else {
+         print("Can not Enter")
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("ZZZZZZZZZZZZZ\(self.groupAutoID!)")
          if let groupAutoIDString = self.groupAutoID {
             let groupRef = Database.database().reference(withPath: "groups")
             let groupAutoID = groupRef.child(groupAutoIDString)
@@ -105,10 +139,8 @@ class GroupMemberViewController: UIViewController, UITableViewDelegate, UITableV
                     print(groupMemberAutoID)
                     let groupRef = Database.database().reference(withPath: "groups")
                     let memberRef = groupRef.child(self.groupAutoID!).child("currentMemberInGroup")
-                    memberRef.observe(.value) { (snapshot) in
+                memberRef.observeSingleEvent(of: .value) { (snapshot) in
                         if var groupMemberArray: [String] = snapshot.value as? [String] {
-                            print("AAAAAAAAAAAAAAAAAAAAAA\(groupMemberArray)")
-                            //若今天有一萬筆？需修改
                             for i in 0..<groupMemberArray.count {
                                 if groupMemberArray[i] == groupMemberAutoID {
                                     groupMemberArray.remove(at: i)
@@ -122,11 +154,34 @@ class GroupMemberViewController: UIViewController, UITableViewDelegate, UITableV
                          print("Wrong Command")
                         }
                     }
-            } else {
-             print("Wrong IndexPath Selected")
+                
+            if let cell = sender.superview?.superview as? GroupMemberTableViewCell {
+                if let indexPath = groupMemberTableView.indexPath(for: cell) {
+                    let groupMemberAutoID: String = groupMemberArray[indexPath.row].groupMember
+                        let notificationRef = Database.database().reference(withPath: "notifications")
+                    notificationRef.queryOrdered(byChild: "groupID").queryEqual(toValue: self.groupAutoID).observeSingleEvent(of: .value) { (snapshot) in
+                                for child in snapshot.children {
+                                        if let childDataSnapshot: DataSnapshot = child as? DataSnapshot {
+                                                if var valueDict: [String: Any] = childDataSnapshot.value as? [String: Any] {
+                                                        if let requestBy: String = valueDict["requestBy"] as? String, let status: String = valueDict["status"] as? String {
+                                                                if requestBy == groupMemberAutoID && status == "1" {
+                                                                        let key = childDataSnapshot.key
+                                                                            valueDict["status"] = "3"
+                                                                        let NotificationRef = notificationRef.child(key)
+                                                                            NotificationRef.setValue(valueDict)
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    print("Wrong IndexPath Selected")
+                            }
+                } else {
+            print("Wrong Cell Selected")
             }
-        } else {
-         print("Wrong Cell Selected")
         }
     }
-}

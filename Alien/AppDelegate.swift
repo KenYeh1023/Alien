@@ -9,6 +9,8 @@
 import UIKit
 import CoreData
 import Firebase
+import Crashlytics
+import Fabric
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +20,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        Fabric.with([Crashlytics.self])
+        Fabric.sharedSDK().debug = true
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        if let userID: String = Auth.auth().currentUser?.uid {
+            print("Status: \(userID)")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "GroupListTabBarView")
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+            
+        } else {
+            print("Status: Not Sign in yet")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = storyboard.instantiateViewController(withIdentifier: "LogInView")
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+            
+        }
+        
         return true
     }
 

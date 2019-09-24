@@ -18,10 +18,12 @@ class NotificationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var agreeButtonOutlet: UIButton!
     
-    
     @IBOutlet weak var rejectButtonOutlet: UIButton!
     
-    
     @IBOutlet weak var userProfilePicture: UIImageView!
+    
+    @IBOutlet weak var timeStamp: UILabel!
+    
+    @IBOutlet weak var notificationContentView: UIView!
     
 }

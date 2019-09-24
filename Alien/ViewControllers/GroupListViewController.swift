@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import MJRefresh
 
 //揪團所有資訊
 struct Group {
@@ -50,23 +51,43 @@ class GroupListViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet var groupListTableView: UITableView!
     
-    var groupArray: [Group] = []
     
+    var groupArray: [Group] = []
+    var blockArray: [String] = []
+    let cellSpacing: CGFloat = 5
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        ////////
+//        self.groupListTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
+//            self.groupListTableView.fetchProducts(dataOffset: 10, dataCount: 10)
+//            self.groupListTableView.mj_footer.isHidden = true
+//        })
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(rightBarButtonPressed))
+        navigationItem.rightBarButtonItem?.image = UIImage(named: "add")
+        
+        if let userID: String = Auth.auth().currentUser?.uid {
+            let ref = Database.database().reference(withPath: "blocked")
+            let blockRef = ref.child(userID)
+            blockRef.observe(.value) { (snapshot) in
+                if let ValueArray: [String] = snapshot.value as? [String] {
+                    self.blockArray = ValueArray
+                }
+            }
+        }
         
         let groupRef = Database.database().reference(withPath: "groups")
-        
         groupRef.observe(.value) { (snapshot) in
-            
             var newGroupArray: [Group] = []
-            
-            for child in snapshot.children {
+            for child in snapshot.children.reversed() {
                 if let groupChild: DataSnapshot = child as? DataSnapshot {
                     if let groupInfo: Group = Group(snapshot: groupChild) {
+                        if self.blockArray.contains(groupInfo.groupOwner) == false {
                         newGroupArray.append(groupInfo)
+                        } else {
+                         print("Being blocked by the group owner")
+                        }
                     } else {
                         print("Data not exists")
               }
@@ -97,13 +118,22 @@ class GroupListViewController: UIViewController, UITableViewDataSource, UITableV
         performSegue(withIdentifier: "showGroupDetail", sender: self)
     }
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacing
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showGroupDetail" {
             if let indexPath = groupListTableView.indexPathForSelectedRow {
                 let groupDetail = segue.destination as! GroupDetailViewController
                 groupDetail.groupDetailTitleText = groupArray[indexPath.row].groupTitle
                 groupDetail.groupDetailGameText = groupArray[indexPath.row].gameTitle
-                //需再修改
                 groupDetail.groupDetailCurrentNumberOfMemberText = groupArray[indexPath.row].maxNumberOfMemberInGroup
                 groupDetail.groupDetailActivityTimeText = groupArray[indexPath.row].groupActivityTime
                 groupDetail.groupDetailAutoIDText = groupArray[indexPath.row].groupAutoID
@@ -117,7 +147,6 @@ class GroupListViewController: UIViewController, UITableViewDataSource, UITableV
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let createGroupView = storyboard.instantiateViewController(withIdentifier: "CreateGroupView")
         self.present(createGroupView, animated: true)
-        
         
     }
 }
