@@ -57,7 +57,11 @@ class GroupListViewController: UIViewController, UITableViewDataSource, UITableV
     let cellSpacing: CGFloat = 5
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.groupListTableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock:  {
+            
+            self.groupListTableView.reloadData()
+            self.groupListTableView.mj_header.isHidden = true
+        })
 //        ////////
 //        self.groupListTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
 //            self.groupListTableView.fetchProducts(dataOffset: 10, dataCount: 10)

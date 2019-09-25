@@ -56,6 +56,9 @@ class GroupMemberViewController: UIViewController, UITableViewDelegate, UITableV
                     let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
                         if error != nil {
                             print("error")
+                            DispatchQueue.main.async {
+                            cell.groupMemberImage.image = UIImage(named: "defaultProfilePicture")
+                            }
                             return
                         }
                         DispatchQueue.main.async {

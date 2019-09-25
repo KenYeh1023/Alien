@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Firebase
+import MJRefresh
 
 struct showDetail {
     var requestName: String
@@ -123,6 +124,9 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
                             let url = URL(string: imageValue)
                             let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
                             if error != nil {
+                                DispatchQueue.main.async {
+                                cell.userProfilePicture.image = UIImage(named: "defaultProfilePicture")
+                                }
                                 print("error")
                                 return
                             }
@@ -197,7 +201,11 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.NotificationTableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock: {
+            self.NotificationTableView.reloadData()
+            self.NotificationTableView.mj_header.isHidden = true
+            print("Refreshing")
+        })
         NotificationTableView.rowHeight = UITableView.automaticDimension
         NotificationTableView.estimatedRowHeight = 70
         

@@ -87,6 +87,9 @@ class PersonalPageViewController: UIViewController {
                     let task = URLSession.shared.dataTask(with: url!, completionHandler: { (data, response, error) in
                         if error != nil {
                             print("error")
+                            DispatchQueue.main.async {
+                            self.profilePicture.image = UIImage(named: "defaultProfilePicture")
+                            }
                             return
                         }
                         DispatchQueue.main.async {

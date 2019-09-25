@@ -29,7 +29,7 @@ class CreateGroupViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     
     var groupMemberArrayForPickerView: [String] = ["", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
-    var gameListArray: [String] = ["阿瓦隆之王：龍之戰役", "龍之紀元", "Postknight", "Racing Fever", "時空鏈戰 (Chain Strike)", "陰屍路：生存之道", "戰潮：亞特蘭蒂斯的英雄", "War and Magic", "全壘衝突", "刺客教條：英雄"]
+    var gameListArray: [String] = ["傳說對決","Auto Chess : Origin","Mario Cart Tour","極速領域","第五人格","PUBG Mobile 絕地求生","Free Fire  我要活下起去","荒野行動 - Knives Out", "楓之谷 M ","魔力寶貝 M ","神魔之塔", "Pokemon Go 精靈寶可夢","黑色沙漠 MOBILE","天堂 M ","RO仙境傳說：守護永恆的愛"]
     
     var groupMemberString = String()
     
@@ -69,6 +69,7 @@ class CreateGroupViewController: UIViewController, UIPickerViewDelegate, UIPicke
         //生成alert
         let dateSelectorAlert = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: UIAlertController.Style.actionSheet)
         dateSelectorAlert.view.addSubview(datePicker)
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertAction.Style.default, handler: nil)
         let selectAction = UIAlertAction(title: "確認", style: UIAlertAction.Style.default, handler: { _ in
             
             let dateValue = DateFormatter()
@@ -78,9 +79,8 @@ class CreateGroupViewController: UIViewController, UIPickerViewDelegate, UIPicke
             self.dateSelectorText.setTitle(buttonText, for: .normal)
             
         })
-        let cancelAction = UIAlertAction(title: "取消", style: UIAlertAction.Style.default, handler: nil)
-        dateSelectorAlert.addAction(cancelAction)
         dateSelectorAlert.addAction(selectAction)
+        dateSelectorAlert.addAction(cancelAction)
         present(dateSelectorAlert, animated: true, completion: nil)
         
     }
