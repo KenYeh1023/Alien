@@ -18,10 +18,8 @@ class RegisterViewController: UIViewController {
     
     @IBOutlet weak var textFieldRegisterEmail: UITextField!
     @IBOutlet weak var textFieldRegisterPassword: UITextField!
-    
     @IBOutlet weak var registerButton: UIButton!
     @IBOutlet weak var returnButton: UIButton!
-    
     @IBOutlet weak var textFieldCreateNickname: UITextField!
     
     

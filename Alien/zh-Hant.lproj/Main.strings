@@ -1,0 +1,147 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0EY-qo-e2g"; */
+"0EY-qo-e2g.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "註冊"; ObjectID = "15I-A6-s5Z"; */
+"15I-A6-s5Z.normalTitle" = "註冊";
+
+/* Class = "UIButton"; normalTitle = "申請加入"; ObjectID = "1Nx-PI-LL1"; */
+"1Nx-PI-LL1.normalTitle" = "申請加入";
+
+/* Class = "UIButton"; normalTitle = "登出"; ObjectID = "3LE-e8-ZKR"; */
+"3LE-e8-ZKR.normalTitle" = "登出";
+
+/* Class = "UILabel"; text = "揪團名稱"; ObjectID = "3t6-K8-Lmd"; */
+"3t6-K8-Lmd.text" = "揪團名稱";
+
+/* Class = "UIButton"; normalTitle = "創建揪團"; ObjectID = "4GL-di-1Ep"; */
+"4GL-di-1Ep.normalTitle" = "創建揪團";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "4rI-uf-P5r"; */
+"4rI-uf-P5r.text" = "Label";
+
+/* Class = "UILabel"; text = "遊戲"; ObjectID = "6fF-6R-4Lj"; */
+"6fF-6R-4Lj.text" = "遊戲";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "7Ru-6w-vgF"; */
+"7Ru-6w-vgF.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "ID"; ObjectID = "9Q4-0N-35j"; */
+"9Q4-0N-35j.text" = "ID";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "9aY-Kb-9od"; */
+"9aY-Kb-9od.text" = "Label";
+
+/* Class = "UILabel"; text = "ID"; ObjectID = "BhX-Dl-oDu"; */
+"BhX-Dl-oDu.text" = "ID";
+
+/* Class = "UILabel"; text = "活動時間"; ObjectID = "EJf-XQ-ajm"; */
+"EJf-XQ-ajm.text" = "活動時間";
+
+/* Class = "UIButton"; normalTitle = "登入"; ObjectID = "FU7-2I-uer"; */
+"FU7-2I-uer.normalTitle" = "登入";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "GN3-9p-86N"; */
+"GN3-9p-86N.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "HOu-CC-Tgn"; */
+"HOu-CC-Tgn.text" = "Label";
+
+/* Class = "UILabel"; text = "GameWith"; ObjectID = "HxG-iW-hAe"; */
+"HxG-iW-hAe.text" = "GameWith";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "INk-76-ghl"; */
+"INk-76-ghl.placeholder" = "E-mail";
+
+/* Class = "UILabel"; text = "揪團ID"; ObjectID = "Jbc-xl-5r7"; */
+"Jbc-xl-5r7.text" = "揪團ID";
+
+/* Class = "UIButton"; normalTitle = "選擇時間"; ObjectID = "KVq-o7-GcG"; */
+"KVq-o7-GcG.normalTitle" = "選擇時間";
+
+/* Class = "UILabel"; text = "揪團成員"; ObjectID = "Kii-zD-ING"; */
+"Kii-zD-ING.text" = "揪團成員";
+
+/* Class = "UILabel"; text = "活動時間"; ObjectID = "LNn-nn-cxB"; */
+"LNn-nn-cxB.text" = "活動時間";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LQq-TC-C1Z"; */
+"LQq-TC-C1Z.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "E-mail"; ObjectID = "Ob0-03-a8f"; */
+"Ob0-03-a8f.placeholder" = "E-mail";
+
+/* Class = "UILabel"; text = "揪團名稱"; ObjectID = "QLi-XX-Q7q"; */
+"QLi-XX-Q7q.text" = "揪團名稱";
+
+/* Class = "UILabel"; text = "房間人數"; ObjectID = "REV-LC-qAn"; */
+"REV-LC-qAn.text" = "房間人數";
+
+/* Class = "UIButton"; normalTitle = "選擇遊戲"; ObjectID = "SJS-Zd-6sn"; */
+"SJS-Zd-6sn.normalTitle" = "選擇遊戲";
+
+/* Class = "UIButton"; normalTitle = "封鎖使用者"; ObjectID = "UB7-2H-ElX"; */
+"UB7-2H-ElX.normalTitle" = "封鎖使用者";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Wk3-ov-BuD"; */
+"Wk3-ov-BuD.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "返回"; ObjectID = "aTp-Bt-whN"; */
+"aTp-Bt-whN.normalTitle" = "返回";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "ah9-5W-fRI"; */
+"ah9-5W-fRI.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "儲存變更"; ObjectID = "bIy-kK-Bg3"; */
+"bIy-kK-Bg3.normalTitle" = "儲存變更";
+
+/* Class = "UILabel"; text = "暱稱"; ObjectID = "cFj-f9-N4T"; */
+"cFj-f9-N4T.text" = "暱稱";
+
+/* Class = "UILabel"; text = "揪玩"; ObjectID = "ckS-DO-XFF"; */
+"ckS-DO-XFF.text" = "揪玩";
+
+/* Class = "UISegmentedControl"; fKO-Jy-ZWb.segmentTitles[0] = "我創建的揪團"; ObjectID = "fKO-Jy-ZWb"; */
+"fKO-Jy-ZWb.segmentTitles[0]" = "我創建的揪團";
+
+/* Class = "UISegmentedControl"; fKO-Jy-ZWb.segmentTitles[1] = "我加入的揪團"; ObjectID = "fKO-Jy-ZWb"; */
+"fKO-Jy-ZWb.segmentTitles[1]" = "我加入的揪團";
+
+/* Class = "UILabel"; text = "遊戲"; ObjectID = "gg0-Tz-k2z"; */
+"gg0-Tz-k2z.text" = "遊戲";
+
+/* Class = "UINavigationItem"; title = "揪團列表"; ObjectID = "hS2-D7-gon"; */
+"hS2-D7-gon.title" = "揪團列表";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "j0f-rr-pbG"; */
+"j0f-rr-pbG.placeholder" = "Password";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "l0N-Jn-yRC"; */
+"l0N-Jn-yRC.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "註冊"; ObjectID = "lU7-oT-dQ5"; */
+"lU7-oT-dQ5.normalTitle" = "註冊";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "mXF-vB-K6T"; */
+"mXF-vB-K6T.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "選擇人數"; ObjectID = "nCy-qj-xgb"; */
+"nCy-qj-xgb.normalTitle" = "選擇人數";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "nkS-7m-dWv"; */
+"nkS-7m-dWv.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "檢舉使用者"; ObjectID = "pBH-8q-EJV"; */
+"pBH-8q-EJV.normalTitle" = "檢舉使用者";
+
+/* Class = "UITextField"; placeholder = "創建使用者暱稱"; ObjectID = "r4g-hy-KWA"; */
+"r4g-hy-KWA.placeholder" = "創建使用者暱稱";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "s8A-vk-FwG"; */
+"s8A-vk-FwG.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "踢除"; ObjectID = "wlP-VD-Ruv"; */
+"wlP-VD-Ruv.normalTitle" = "踢除";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "xPy-Ie-NDJ"; */
+"xPy-Ie-NDJ.text" = "Label";

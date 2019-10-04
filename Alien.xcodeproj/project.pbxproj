@@ -49,6 +49,8 @@
 		FC87C4FD231397460099D05E /* Alien.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Alien.entitlements; sourceTree = "<group>"; };
 		FC87C4FE2313E6250099D05E /* GroupListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListViewController.swift; sourceTree = "<group>"; };
 		FC87C5002313E9850099D05E /* GroupListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListTableViewCell.swift; sourceTree = "<group>"; };
+		FC8C5359233BB572000F0966 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		FC8C535A233BB572000F0966 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		FC9150F1231799E400F4A83D /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		FCBF189D231E2A3D00B0F26F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		FCC8F3CB232F635000128379 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../../RegisterViewController.swift; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hant",
 			);
 			mainGroup = FCF79B3F230FFAA900D3B589;
 			productRefGroup = FCF79B49230FFAA900D3B589 /* Products */;
@@ -329,6 +332,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FCF79B50230FFAA900D3B589 /* Base */,
+				FC8C5359233BB572000F0966 /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -337,6 +341,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				FCF79B58230FFAAA00D3B589 /* Base */,
+				FC8C535A233BB572000F0966 /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -348,6 +353,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -409,6 +415,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

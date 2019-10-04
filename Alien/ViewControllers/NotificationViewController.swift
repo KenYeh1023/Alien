@@ -155,6 +155,8 @@ class NotificationViewController: UIViewController, UITableViewDelegate, UITable
             } else {
              print("Fail to get time stamp")
             }
+            cell.userNameText.setTitleColor(UIColor.white, for: .normal)
+            cell.userNameText.titleLabel?.font = .systemFont(ofSize: 11)
             if notificationArraySection2[indexPath.row].notificationStatus == "reject" {
                 notificationArraySection2[indexPath.row].notificationText1 = "婉拒了您的加入請求"
             } else if notificationArraySection2[indexPath.row].notificationStatus == "kick" {
