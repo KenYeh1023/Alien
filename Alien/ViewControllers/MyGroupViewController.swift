@@ -30,21 +30,29 @@ class MyGroupViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        performSegue(withIdentifier: "showGroupDetailFromMyGroup", sender: self)
-        
+        performSegue(withIdentifier: "showChatRoom", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showGroupDetailFromMyGroup" {
+        if segue.identifier == "showGroupDetailFromChatRoom" {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let groupDetail = segue.destination as! GroupDetailViewController
                 groupDetail.groupDetailTitleText = groupArray[int][indexPath.row].groupTitle
                 groupDetail.groupDetailGameText = groupArray[int][indexPath.row].gameTitle
-                //需再修改
                 groupDetail.groupDetailCurrentNumberOfMemberText = groupArray[int][indexPath.row].maxNumberOfMemberInGroup
                 groupDetail.groupDetailActivityTimeText = groupArray[int][indexPath.row].groupActivityTime
                 groupDetail.groupDetailAutoIDText = groupArray[int][indexPath.row].groupAutoID
                 groupDetail.groupDetailGroupOwnerText = groupArray[int][indexPath.row].groupOwner
+            }
+        } else if segue.identifier == "showChatRoom" {
+            if let indexPath = tableView.indexPathForSelectedRow {
+             let chatRoom = segue.destination as! ChatRoomViewController
+                chatRoom.chatRoomAutoID = groupArray[int][indexPath.row].groupAutoID
+                chatRoom.chatRoomTitleText = groupArray[int][indexPath.row].groupTitle
+                chatRoom.chatRoomGameText = groupArray[int][indexPath.row].gameTitle
+                chatRoom.chatRoomCurrentNumberOfMemberText = groupArray[int][indexPath.row].maxNumberOfMemberInGroup
+                chatRoom.chatRoomActivityTimeText = groupArray[int][indexPath.row].groupActivityTime
+                chatRoom.chatRoomGroupOwnerText = groupArray[int][indexPath.row].groupOwner
             }
         }
     }
@@ -78,7 +86,6 @@ class MyGroupViewController: UIViewController, UITableViewDelegate, UITableViewD
                             if var memberArray: [String] = childDict["currentMemberInGroup"] as? [String] {
                                 
                                 for i in 0..<memberArray.count {
-                                    print("XZXLKMDKOKDMNODMNODMODNNDONNWOOIENODDONOCNONODMOXMOMOS\(i)")
                                     if memberArray[i] == userID {
                                         if let childValue: Group = Group(snapshot: childSnapshot) {
                                             if i == 0 {

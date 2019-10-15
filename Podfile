@@ -15,4 +15,5 @@ target 'Alien' do
   pod 'Crashlytics'
   pod 'Firebase/Storage'
   pod 'MJRefresh'
+  pod 'IQKeyboardManagerSwift'
 end

@@ -23,6 +23,11 @@
 		FC9150F2231799E400F4A83D /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9150F1231799E400F4A83D /* GroupDetailViewController.swift */; };
 		FCBF189E231E2A3D00B0F26F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBF189D231E2A3D00B0F26F /* NotificationViewController.swift */; };
 		FCC8F3CC232F635000128379 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC8F3CB232F635000128379 /* RegisterViewController.swift */; };
+		FCD3BC7723547D6B00268380 /* UserMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3BC7523547D6B00268380 /* UserMessageTableViewCell.swift */; };
+		FCD3BC7823547D6B00268380 /* UserMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD3BC7623547D6B00268380 /* UserMessageTableViewCell.xib */; };
+		FCD3BC7D23547DB300268380 /* OtherUserMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3BC7B23547DB300268380 /* OtherUserMessageTableViewCell.swift */; };
+		FCD3BC7E23547DB300268380 /* OtherUserMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCD3BC7C23547DB300268380 /* OtherUserMessageTableViewCell.xib */; };
+		FCD3BC80235480F200268380 /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD3BC7F235480F200268380 /* ChatRoomViewController.swift */; };
 		FCEEA14E231CBA4E00548264 /* GroupMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEA14D231CBA4E00548264 /* GroupMemberViewController.swift */; };
 		FCEEA150231CBE7500548264 /* GroupMemberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEEA14F231CBE7500548264 /* GroupMemberTableViewCell.swift */; };
 		FCF79B4C230FFAA900D3B589 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF79B4B230FFAA900D3B589 /* AppDelegate.swift */; };
@@ -54,6 +59,11 @@
 		FC9150F1231799E400F4A83D /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
 		FCBF189D231E2A3D00B0F26F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		FCC8F3CB232F635000128379 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterViewController.swift; path = ../../RegisterViewController.swift; sourceTree = "<group>"; };
+		FCD3BC7523547D6B00268380 /* UserMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMessageTableViewCell.swift; sourceTree = "<group>"; };
+		FCD3BC7623547D6B00268380 /* UserMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserMessageTableViewCell.xib; sourceTree = "<group>"; };
+		FCD3BC7B23547DB300268380 /* OtherUserMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherUserMessageTableViewCell.swift; sourceTree = "<group>"; };
+		FCD3BC7C23547DB300268380 /* OtherUserMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherUserMessageTableViewCell.xib; sourceTree = "<group>"; };
+		FCD3BC7F235480F200268380 /* ChatRoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		FCEEA14D231CBA4E00548264 /* GroupMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberViewController.swift; sourceTree = "<group>"; };
 		FCEEA14F231CBE7500548264 /* GroupMemberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupMemberTableViewCell.swift; sourceTree = "<group>"; };
 		FCF79B48230FFAA900D3B589 /* Alien.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Alien.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +118,9 @@
 				FCEEA14D231CBA4E00548264 /* GroupMemberViewController.swift */,
 				FCBF189D231E2A3D00B0F26F /* NotificationViewController.swift */,
 				FC5CA8CC2320E4D6007E7763 /* GroupListTabBarController.swift */,
+				FC5B7B9A232602CA00CFE54E /* OtherUserViewController.swift */,
+				FC5B7B9C2327581D00CFE54E /* MyGroupViewController.swift */,
+				FCD3BC7F235480F200268380 /* ChatRoomViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -119,6 +132,10 @@
 				FC6EFF19231675A200E2DAAA /* GroupCreatorTableViewCell.swift */,
 				FCEEA14F231CBE7500548264 /* GroupMemberTableViewCell.swift */,
 				FC7EC79A231E759400E6989F /* NotificationTableViewCell.swift */,
+				FCD3BC7523547D6B00268380 /* UserMessageTableViewCell.swift */,
+				FCD3BC7623547D6B00268380 /* UserMessageTableViewCell.xib */,
+				FCD3BC7B23547DB300268380 /* OtherUserMessageTableViewCell.swift */,
+				FCD3BC7C23547DB300268380 /* OtherUserMessageTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -152,8 +169,6 @@
 				FCF79B5A230FFAAA00D3B589 /* Info.plist */,
 				FCF79B52230FFAA900D3B589 /* Alien.xcdatamodeld */,
 				FC52C21223138D14001E72C6 /* GoogleService-Info.plist */,
-				FC5B7B9C2327581D00CFE54E /* MyGroupViewController.swift */,
-				FC5B7B9A232602CA00CFE54E /* OtherUserViewController.swift */,
 				FC5CA8CF23226B4C007E7763 /* ViewControllers */,
 				FC7675F123226C6C007406A0 /* TableViewCells */,
 				FC5B7B9E23279EE100CFE54E /* MyGroupTableViewCell.swift */,
@@ -229,8 +244,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCD3BC7823547D6B00268380 /* UserMessageTableViewCell.xib in Resources */,
 				FCF79B59230FFAAA00D3B589 /* LaunchScreen.storyboard in Resources */,
 				FCF79B56230FFAAA00D3B589 /* Assets.xcassets in Resources */,
+				FCD3BC7E23547DB300268380 /* OtherUserMessageTableViewCell.xib in Resources */,
 				FC52C21323138D14001E72C6 /* GoogleService-Info.plist in Resources */,
 				FCF79B51230FFAA900D3B589 /* Main.storyboard in Resources */,
 				FC5B7BA123279EE100CFE54E /* MyGroupTableViewCell.xib in Resources */,
@@ -306,16 +323,19 @@
 			files = (
 				FC7EC79B231E759400E6989F /* NotificationTableViewCell.swift in Sources */,
 				FC5B7B9B232602CA00CFE54E /* OtherUserViewController.swift in Sources */,
+				FCD3BC7723547D6B00268380 /* UserMessageTableViewCell.swift in Sources */,
 				FC87C5012313E9850099D05E /* GroupListTableViewCell.swift in Sources */,
 				FCBF189E231E2A3D00B0F26F /* NotificationViewController.swift in Sources */,
 				FC9150F2231799E400F4A83D /* GroupDetailViewController.swift in Sources */,
 				FC87C4FF2313E6250099D05E /* GroupListViewController.swift in Sources */,
+				FCD3BC7D23547DB300268380 /* OtherUserMessageTableViewCell.swift in Sources */,
 				FC3618DF2314CC010031F1AD /* CreateGroupViewController.swift in Sources */,
 				FCF79B4E230FFAA900D3B589 /* LogInViewController.swift in Sources */,
 				FC5B7B9D2327581D00CFE54E /* MyGroupViewController.swift in Sources */,
 				FCC8F3CC232F635000128379 /* RegisterViewController.swift in Sources */,
 				FCEEA150231CBE7500548264 /* GroupMemberTableViewCell.swift in Sources */,
 				FCF79B4C230FFAA900D3B589 /* AppDelegate.swift in Sources */,
+				FCD3BC80235480F200268380 /* ChatRoomViewController.swift in Sources */,
 				FC5CA8CD2320E4D6007E7763 /* GroupListTabBarController.swift in Sources */,
 				FC6EFF1A231675A200E2DAAA /* GroupCreatorTableViewCell.swift in Sources */,
 				FC5B7BA023279EE100CFE54E /* MyGroupTableViewCell.swift in Sources */,

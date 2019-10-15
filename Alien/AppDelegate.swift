@@ -11,6 +11,7 @@ import CoreData
 import Firebase
 import Crashlytics
 import Fabric
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -39,6 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.window?.makeKeyAndVisible()
             
         }
+        
+        IQKeyboardManager.shared.enable = true
         
         return true
     }
