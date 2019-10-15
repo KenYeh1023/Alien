@@ -34,17 +34,7 @@ class MyGroupViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showGroupDetailFromChatRoom" {
-            if let indexPath = tableView.indexPathForSelectedRow {
-                let groupDetail = segue.destination as! GroupDetailViewController
-                groupDetail.groupDetailTitleText = groupArray[int][indexPath.row].groupTitle
-                groupDetail.groupDetailGameText = groupArray[int][indexPath.row].gameTitle
-                groupDetail.groupDetailCurrentNumberOfMemberText = groupArray[int][indexPath.row].maxNumberOfMemberInGroup
-                groupDetail.groupDetailActivityTimeText = groupArray[int][indexPath.row].groupActivityTime
-                groupDetail.groupDetailAutoIDText = groupArray[int][indexPath.row].groupAutoID
-                groupDetail.groupDetailGroupOwnerText = groupArray[int][indexPath.row].groupOwner
-            }
-        } else if segue.identifier == "showChatRoom" {
+        if segue.identifier == "showChatRoom" {
             if let indexPath = tableView.indexPathForSelectedRow {
              let chatRoom = segue.destination as! ChatRoomViewController
                 chatRoom.chatRoomAutoID = groupArray[int][indexPath.row].groupAutoID

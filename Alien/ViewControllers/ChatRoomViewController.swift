@@ -102,6 +102,7 @@ class ChatRoomViewController: UIViewController {
                 }
                 self.messageArray = newMessageArray
                 self.chatRoomTableView.reloadData()
+                self.chatRoomTableView.scrollToRow(at: IndexPath(row: self.messageArray.count-1, section: 0), at: UITableView.ScrollPosition.bottom, animated: false)
             }
         }
     }
