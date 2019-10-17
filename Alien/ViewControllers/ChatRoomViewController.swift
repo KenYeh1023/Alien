@@ -36,6 +36,8 @@ class ChatRoomViewController: UIViewController {
     var chatRoomGameText: String?
     var chatRoomGroupOwnerText: String?
     
+    var refreshControl: UIRefreshControl!
+    
     @IBOutlet weak var chatRoomTableView: UITableView!
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var textFieldView: UIView!
@@ -44,6 +46,10 @@ class ChatRoomViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        refreshControl = UIRefreshControl()
+        chatRoomTableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(fetchMessage), for: UIControl.Event.valueChanged)
+        
         let button = UIButton.init(type: .custom)
         button.setImage(UIImage.init(named: "info"), for: UIControl.State.normal)
         button.addTarget(self, action:#selector(rightBarButtonPressed), for:.touchUpInside)
@@ -82,10 +88,12 @@ class ChatRoomViewController: UIViewController {
         }
     }
     
-    func fetchMessage() {
+    @objc func fetchMessage() {
+        print("=====================Refreshing===========================")
+        self.refreshControl.endRefreshing()
         let ref = Database.database().reference()
         let chatRoomRef = ref.child("messages").child(chatRoomAutoID!)
-        chatRoomRef.observe(.value) { (dataSnapshot) in
+        chatRoomRef.queryLimited(toLast: UInt(messageArray.count + 10)).observe(.value) { (dataSnapshot) in
             var newMessageArray: [Message] = []
             if dataSnapshot.childrenCount > 0 {
                 for child in dataSnapshot.children {
@@ -102,7 +110,7 @@ class ChatRoomViewController: UIViewController {
                 }
                 self.messageArray = newMessageArray
                 self.chatRoomTableView.reloadData()
-                self.chatRoomTableView.scrollToRow(at: IndexPath(row: self.messageArray.count-1, section: 0), at: UITableView.ScrollPosition.bottom, animated: false)
+                self.chatRoomTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: false)
             }
         }
     }

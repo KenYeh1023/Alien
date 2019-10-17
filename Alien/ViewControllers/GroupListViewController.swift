@@ -8,7 +8,6 @@
 
 import Foundation
 import Firebase
-import MJRefresh
 
 //揪團所有資訊
 struct Group {
@@ -51,22 +50,15 @@ class GroupListViewController: UIViewController, UITableViewDataSource, UITableV
     
     @IBOutlet var groupListTableView: UITableView!
     
-    
+    var refreshControl: UIRefreshControl!
     var groupArray: [Group] = []
     var blockArray: [String] = []
     let cellSpacing: CGFloat = 5
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.groupListTableView.mj_header = MJRefreshNormalHeader.init(refreshingBlock:  {
-            
-            self.groupListTableView.reloadData()
-            self.groupListTableView.mj_header.isHidden = true
-        })
-//        ////////
-//        self.groupListTableView.mj_footer = MJRefreshAutoNormalFooter.init(refreshingBlock: {
-//            self.groupListTableView.fetchProducts(dataOffset: 10, dataCount: 10)
-//            self.groupListTableView.mj_footer.isHidden = true
-//        })
+        refreshControl = UIRefreshControl()
+        groupListTableView.addSubview(refreshControl)
+        refreshControl.addTarget(self, action: #selector(reloadData), for: UIControl.Event.valueChanged)
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(rightBarButtonPressed))
         navigationItem.rightBarButtonItem?.image = UIImage(named: "add")
@@ -152,5 +144,12 @@ class GroupListViewController: UIViewController, UITableViewDataSource, UITableV
         let createGroupView = storyboard.instantiateViewController(withIdentifier: "CreateGroupView")
         self.present(createGroupView, animated: true)
         
+    }
+    
+    @objc func reloadData() {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            self.refreshControl.endRefreshing()
+            self.groupListTableView.reloadData()
+        }
     }
 }

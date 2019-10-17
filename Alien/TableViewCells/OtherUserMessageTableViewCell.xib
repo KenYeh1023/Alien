@@ -35,7 +35,7 @@
                         <rect key="frame" x="54" y="17" width="61.5" height="24"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b0f-8c-of6">
-                                <rect key="frame" x="12" y="0.0" width="37.5" height="21"/>
+                                <rect key="frame" x="12" y="1" width="37.5" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="v7X-K8-ozo"/>
                                 </constraints>
@@ -48,8 +48,8 @@
                         <constraints>
                             <constraint firstItem="b0f-8c-of6" firstAttribute="leading" secondItem="Z77-MB-vlf" secondAttribute="leading" constant="12" id="9Xi-xv-244"/>
                             <constraint firstAttribute="trailing" secondItem="b0f-8c-of6" secondAttribute="trailing" constant="12" id="BVP-HU-ku8"/>
-                            <constraint firstAttribute="bottom" secondItem="b0f-8c-of6" secondAttribute="bottom" constant="3" id="f3F-AE-DOm"/>
-                            <constraint firstItem="b0f-8c-of6" firstAttribute="top" secondItem="Z77-MB-vlf" secondAttribute="top" id="mxv-ow-5b5"/>
+                            <constraint firstAttribute="bottom" secondItem="b0f-8c-of6" secondAttribute="bottom" constant="2" id="f3F-AE-DOm"/>
+                            <constraint firstItem="b0f-8c-of6" firstAttribute="top" secondItem="Z77-MB-vlf" secondAttribute="top" constant="1" id="mxv-ow-5b5"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -57,12 +57,12 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgc-7v-LfP">
-                        <rect key="frame" x="54" y="6" width="28" height="11"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sgc-7v-LfP">
+                        <rect key="frame" x="54" y="4" width="32" height="11"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="11" id="ryq-LO-3IA"/>
                         </constraints>
-                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -76,7 +76,7 @@
                 <color key="backgroundColor" red="0.090196078430000007" green="0.1529411765" blue="0.20392156859999999" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
                     <constraint firstItem="e3y-yF-ApS" firstAttribute="leading" secondItem="Z77-MB-vlf" secondAttribute="trailing" constant="3.5" id="9cm-No-jz8"/>
-                    <constraint firstItem="Z77-MB-vlf" firstAttribute="top" secondItem="Sgc-7v-LfP" secondAttribute="bottom" id="FWX-IT-llV"/>
+                    <constraint firstItem="Z77-MB-vlf" firstAttribute="top" secondItem="Sgc-7v-LfP" secondAttribute="bottom" constant="2" id="FWX-IT-llV"/>
                     <constraint firstItem="Sgc-7v-LfP" firstAttribute="leading" secondItem="bdD-Ws-CZe" secondAttribute="trailing" constant="8" id="Otr-7I-EFD"/>
                     <constraint firstItem="bdD-Ws-CZe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="V7n-Ao-Sp1"/>
                     <constraint firstItem="Z77-MB-vlf" firstAttribute="leading" secondItem="bdD-Ws-CZe" secondAttribute="trailing" constant="8" id="hCd-qP-svZ"/>
@@ -85,7 +85,7 @@
                     <constraint firstItem="bdD-Ws-CZe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="ond-wC-FZs"/>
                     <constraint firstAttribute="bottom" secondItem="e3y-yF-ApS" secondAttribute="bottom" constant="2.5" id="psC-dA-xBj"/>
                     <constraint firstAttribute="bottom" secondItem="Z77-MB-vlf" secondAttribute="bottom" constant="2.5" id="sOy-gE-tsm"/>
-                    <constraint firstItem="Sgc-7v-LfP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="ucU-ku-dZG"/>
+                    <constraint firstItem="Sgc-7v-LfP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="ucU-ku-dZG"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
