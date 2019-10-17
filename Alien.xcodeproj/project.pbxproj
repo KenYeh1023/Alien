@@ -136,6 +136,8 @@
 				FCD3BC7623547D6B00268380 /* UserMessageTableViewCell.xib */,
 				FCD3BC7B23547DB300268380 /* OtherUserMessageTableViewCell.swift */,
 				FCD3BC7C23547DB300268380 /* OtherUserMessageTableViewCell.xib */,
+				FC5B7B9E23279EE100CFE54E /* MyGroupTableViewCell.swift */,
+				FC5B7B9F23279EE100CFE54E /* MyGroupTableViewCell.xib */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -171,8 +173,6 @@
 				FC52C21223138D14001E72C6 /* GoogleService-Info.plist */,
 				FC5CA8CF23226B4C007E7763 /* ViewControllers */,
 				FC7675F123226C6C007406A0 /* TableViewCells */,
-				FC5B7B9E23279EE100CFE54E /* MyGroupTableViewCell.swift */,
-				FC5B7B9F23279EE100CFE54E /* MyGroupTableViewCell.xib */,
 			);
 			path = Alien;
 			sourceTree = "<group>";
